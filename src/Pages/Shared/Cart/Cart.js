@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const Cart = () => {
   return <Wrapper></Wrapper>;
 };
@@ -104,7 +105,7 @@ const Wrapper = styled.section`
 
     .amount-style {
       font-size: 2.4rem;
-      color: ${({ theme }) => theme.colors.btn};
+      color: ${({ theme }) => theme.colors?.btn};
     }
   }
 
@@ -142,11 +143,11 @@ const Wrapper = styled.section`
 
     div p:last-child {
       font-weight: bold;
-      color: ${({ theme }) => theme.colors.heading};
+      color: ${({ theme }) => theme.colors?.heading};
     }
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
+  @media (max-width: ${({ theme }) => theme.media?.mobile}) {
     .grid-five-column {
       grid-template-columns: 1.5fr 1fr 0.5fr;
     }
