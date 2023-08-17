@@ -1,26 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
+import HeroSection from '../../../components/HeroSection/HeroSection';
+import FeaturedProducts from '../../../components/FeaturedProducts/FeaturedProducts';
 
 const Home = () => {
+
+    const data = {
+        name: 'Al Habib Equipments'
+    }
+
     return (
+        <>
+            <HeroSection myData={data} />
 
-        <Wrapper>
-            <div className='mt-5'>
-                <h2 className='test'>this is home</h2>
-            </div>
-
-
-        </Wrapper>
-
-
-
+            <FeaturedProducts />
+        </>
     );
 };
 
-const Wrapper = styled.section`
-background-color: ${({ theme }) => theme?.colors?.bg};
-height: 100vh;
-
-`;
 
 export default Home;

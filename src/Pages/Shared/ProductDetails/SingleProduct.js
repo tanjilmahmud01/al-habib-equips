@@ -1,10 +1,141 @@
 import styled from "styled-components";
+import { useParams } from 'react-router-dom';
+import { useEffect } from "react";
+import { useProductContext } from "../../../context/productContext";
+import PageNavigation from "../../../components/PageNavigation/PageNavigation";
+import MyImage from "../../../components/MyImage/MyImage";
+import { Container } from "../../../styles/Container";
+import { TbReplace, TbTruckDelivery } from 'react-icons/tb';
+import { MdSecurity } from 'react-icons/md'
+
+
 
 const SingleProduct = () => {
-  return <Wrapper>
-    <h1>hi</h1>
-  </Wrapper>;
 
+
+
+  const { getSingleProduct, isSingleLoading, singleProduct } = useProductContext();
+
+  // coming from Product, url parameter
+  const { id } = useParams();
+  const API = `http://localhost:5000/products/${id}`;
+
+  useEffect(() => {
+    getSingleProduct(`${API}`);
+
+  }, [])
+
+  const {
+    _id: alias,
+    category_id,
+    category,
+    name,
+    short_description,
+    description,
+    price,
+    image_url,
+    details,
+    featured,
+    stock,
+    image
+
+  } = singleProduct;
+
+  if (isSingleLoading) {
+    return <div className="page_loading">Loading.....</div>;
+  }
+
+  const technical_list = description?.technical_specifications;
+  const list_itmes = technical_list?.map((listItem, index) =>
+    <li style={{ listStyle: "square", marginBottom: "5px", marginLeft: "50px" }} key={index}>{listItem}</li>
+  );
+
+  return <Wrapper>
+    <PageNavigation title={name} />
+    <Container className="container">
+      <div className="grid grid-two-column">
+        {/* product Images  */}
+        <div className="product_images">
+          <MyImage imgs={image} />
+        </div>
+
+        {/* product dAta  */}
+        <div className="product-data">
+          <h2>{name}</h2>
+          {/* <p>{stars}</p> */}
+          {/* <p>{reviews} reviews</p> */}
+          {/* <p className="product-data-price">
+            MRP:
+            <del>
+              <FormatPrice price={price + 250000} />
+            </del>
+          </p> */}
+          {/* <p className="product-data-price product-data-real-price">
+            Deal of the Day: <FormatPrice price={price} />
+          </p> */}
+          <h3 style={{ color: "#900C3F" }}> <u>Technical Specifications:</u>
+          </h3>
+          <ul>
+
+
+
+            <p>{list_itmes}</p>
+
+
+
+
+
+
+
+
+          </ul>
+
+          <h3> <u style={{ color: "#900C3F" }}>Product Description:</u>  </h3>
+          <p>{description?.detailed_description}</p>
+          <h3> <u style={{ color: "#900C3F" }}>Warranty Information::</u>  </h3>
+          <p>{description?.warranty_info}</p>
+
+          <p> <strong>Weight: </strong>{description?.weight}</p>
+
+
+          <div className="product-data-warranty">
+            <div className="product-warranty-data">
+              <TbTruckDelivery className="warranty-icon" />
+              <p>Free Delivery</p>
+            </div>
+
+            <div className="product-warranty-data">
+              <TbReplace className="warranty-icon" />
+              <p>30 Days Replacement</p>
+            </div>
+
+            <div className="product-warranty-data">
+              <TbTruckDelivery className="warranty-icon" />
+              <p>Delivery in whole Bangladesh</p>
+            </div>
+
+            <div className="product-warranty-data">
+              <MdSecurity className="warranty-icon" />
+              <p>2 Years Warranty </p>
+            </div>
+          </div>
+
+          <div className="product-data-info">
+            <p>
+              Available:
+              <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
+            </p>
+            <p>
+              Product ID: <span> {alias} </span>
+            </p>
+            {/* <p>
+              Brand :<span> {company} </span>
+            </p> */}
+          </div>
+        </div>
+      </div>
+    </Container>
+  </Wrapper>
 }
 
 
