@@ -11,6 +11,7 @@ import Contact from "./Pages/Shared/ContactUs/Contact";
 import SingleProduct from "./Pages/Shared/ProductDetails/SingleProduct";
 import Error from "./Pages/Shared/Error/Error";
 import Cart from "./Pages/Shared/Cart/Cart";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
 
@@ -57,6 +58,7 @@ const App = () => {
           <Route path="*" element={<Error />} />
 
         </Routes>
+        <Footer/>
       </Router>
 
     </ThemeProvider>

@@ -8,7 +8,7 @@ const BrandSlider = () => {
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
@@ -16,7 +16,7 @@ const BrandSlider = () => {
         responsive: [{
           breakpoint: 768,
           settings: {
-            slidesToShow: 2
+            slidesToShow: 3
           }
         }, {
           breakpoint: 520,
