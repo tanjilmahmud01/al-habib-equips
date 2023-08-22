@@ -12,7 +12,7 @@ export const routes = createBrowserRouter([
 
     {
         path: '/',
-        element: <Main></Main>
+        element: <Home></Home>
 
     },
     {
@@ -36,7 +36,7 @@ export const routes = createBrowserRouter([
 
     },
     {
-        path: '/cart',
+        path: '/carted',
         element: <Cart></Cart>
 
     },

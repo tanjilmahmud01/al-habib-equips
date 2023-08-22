@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+// url set to empty string for undefined map error, setting default values in imgs array
 const MyImage = ({ imgs = [{ url: "" }] }) => {
     const [mainImage, setMainImage] = useState(imgs[0]);
 
@@ -52,6 +53,7 @@ const Wrapper = styled.section`
       box-shadow: ${({ theme }) => theme.colors.shadow};
     }
   }
+  
 
   .main-screen {
     display: grid;

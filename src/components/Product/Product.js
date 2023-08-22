@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Product = (curElem) => {
     const { _id, name, image_url, price, category } = curElem;
-    console.log(name);
+    // console.log(name);
 
     return (
         <NavLink to={`/singleproduct/${_id}`}>

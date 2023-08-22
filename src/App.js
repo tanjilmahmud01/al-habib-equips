@@ -10,6 +10,7 @@ import Products from "./Pages/Shared/Products/Products";
 import Contact from "./Pages/Shared/ContactUs/Contact";
 import SingleProduct from "./Pages/Shared/ProductDetails/SingleProduct";
 import Error from "./Pages/Shared/Error/Error";
+import Cart from "./Pages/Shared/Cart/Cart";
 
 const App = () => {
 
@@ -52,6 +53,7 @@ const App = () => {
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Error />} />
 
         </Routes>

@@ -4,7 +4,7 @@ import reducer from "../reducer/productReducer/productReducer";
 
 const AppContext = createContext();
 
-const API = "http://localhost:5000/products";
+const API = "https://alhabib-server.vercel.app/products";
 
 const initialState = {
     isLoading: false,

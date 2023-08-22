@@ -7,6 +7,7 @@ import MyImage from "../../../components/MyImage/MyImage";
 import { Container } from "../../../styles/Container";
 import { TbReplace, TbTruckDelivery } from 'react-icons/tb';
 import { MdSecurity } from 'react-icons/md'
+import AddToCart from "../../../components/AddToCart/AddToCart";
 
 
 
@@ -18,7 +19,7 @@ const SingleProduct = () => {
 
   // coming from Product, url parameter
   const { id } = useParams();
-  const API = `http://localhost:5000/products/${id}`;
+  const API = `https://alhabib-server.vercel.app/products/${id}`;
 
   useEffect(() => {
     getSingleProduct(`${API}`);
@@ -45,6 +46,7 @@ const SingleProduct = () => {
     return <div className="page_loading">Loading.....</div>;
   }
 
+  // array of technical specifications data
   const technical_list = description?.technical_specifications;
   const list_itmes = technical_list?.map((listItem, index) =>
     <li style={{ listStyle: "square", marginBottom: "5px", marginLeft: "50px" }} key={index}>{listItem}</li>
@@ -77,26 +79,17 @@ const SingleProduct = () => {
           </h3>
           <ul>
 
-
-
             <p>{list_itmes}</p>
-
-
-
-
-
-
-
 
           </ul>
 
           <h3> <u style={{ color: "#900C3F" }}>Product Description:</u>  </h3>
           <p>{description?.detailed_description}</p>
+
           <h3> <u style={{ color: "#900C3F" }}>Warranty Information::</u>  </h3>
           <p>{description?.warranty_info}</p>
 
           <p> <strong>Weight: </strong>{description?.weight}</p>
-
 
           <div className="product-data-warranty">
             <div className="product-warranty-data">
@@ -131,6 +124,10 @@ const SingleProduct = () => {
             {/* <p>
               Brand :<span> {company} </span>
             </p> */}
+
+            <hr />
+            {stock > 0 && <AddToCart product={singleProduct} />}
+
           </div>
         </div>
       </div>
@@ -143,6 +140,7 @@ const Wrapper = styled.section`
   .container {
     padding: 9rem 0;
   }
+
   .product-data {
     display: flex;
     flex-direction: column;

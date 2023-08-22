@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSection from '../../../components/HeroSection/HeroSection';
 import FeaturedProducts from '../../../components/FeaturedProducts/FeaturedProducts';
+import BrandSlider from '../../../components/BrandSlider/BrandSlider';
 
 const Home = () => {
 
@@ -13,6 +14,8 @@ const Home = () => {
             <HeroSection myData={data} />
 
             <FeaturedProducts />
+
+            <BrandSlider/>
         </>
     );
 };

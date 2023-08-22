@@ -5,6 +5,20 @@ import styled from 'styled-components';
 
 const Contact = () => {
 
+  const localCartData = localStorage.getItem("alhabibCart");
+  const cartData = JSON.parse(localCartData);
+  console.log(cartData);
+
+  let isQuote = true;
+
+  if(cartData.length === 0) {
+    isQuote = false;
+  }
+  
+  let productData = cartData.map((product) => `${product.name} ${product.amount} pcs`).join('\n');
+
+  console.log(productData);
+  
 
   return (
     <Wrapper>
@@ -32,7 +46,7 @@ const Contact = () => {
             className="contact-inputs">
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Your Name"
               name="username"
               required
               autoComplete="off"
@@ -41,18 +55,30 @@ const Contact = () => {
             <input
               type="email"
               name="Email"
-              placeholder="Email"
+              placeholder="Your Email"
               autoComplete="off"
+              // required
+            />
+            <input
+              type="tel"
+              name="Phone"
+              placeholder="Your Mobile Number"
+              autoComplete="off"
+              pattern="[0-9]{11}"
+              title='Please give a valid Bangladeshi Phone Number'
               required
             />
-
+           
             <textarea
-              name="Message"
-              cols="30"
-              rows="10"
-              required
-              autoComplete="off"
-              placeholder="Enter you message"></textarea>
+                name="Message"
+                cols="30"
+                rows="10"
+                required
+                autoComplete="off"
+                placeholder={`Your Message`}
+                value={`I want a quotation for the following items: \n\n${productData}`}
+                ></textarea>
+            
 
             <input type="submit" value="send" />
           </form>
