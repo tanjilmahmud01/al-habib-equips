@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Button } from "../../styles/Button";
-import { FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaInstagram, FaYoutube, FaAddressCard, FaPhoneAlt, FaClock } from "react-icons/fa";
+import { TbSend } from "react-icons/tb";
+import logo from '../../images/al-habib-logo.png';
 
 const Footer = () => {
   return (
@@ -27,8 +29,37 @@ const Footer = () => {
         <footer>
           <div className="container grid grid-four-column">
             <div className="footer-about">
-              <h3>Al Habib</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+            <h3>About</h3>
+            <img src={logo} alt="al habib logo" />
+              <h3 style={{marginBottom:"2rem", marginTop:"2rem"}}>Al Habib</h3>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, placeat? Provident at dolore nesciunt qui?</p>
+              <div className="adress">
+              <FaAddressCard style={{fontSize:"30px", color:"black"}} className="icons" />
+              
+              <p>65 Nawabpur Road, Dhaka</p>
+              </div>
+              <div className="adress">
+              <FaPhoneAlt style={{fontSize:"30px", color:"black"}} className="icons" />
+              
+              <p>017111111111</p>
+              <p>017222222222</p>
+              </div>
+              <div className="adress">
+              <FaAddressCard style={{fontSize:"30px", color:"black"}} className="icons" />
+              
+              <p>65 Nawabpur Road, Dhaka</p>
+              </div>
+              <div className="adress">
+              <TbSend style={{fontSize:"30px", color:"black"}} className="icons" />
+              
+              <p>alhabib@gmail.com</p>
+              </div>
+              <div className="adress">
+              <FaClock style={{fontSize:"30px", color:"black"}} className="icons" />
+              
+              <p>9 AM to 5 PM</p>
+              </div>
+             
             </div>
             <div className="footer-subscribe">
               <h3>Subscribe to get important updates</h3>
@@ -58,7 +89,7 @@ const Footer = () => {
             </div>
             <div className="footer-contact">
               <h3>Call Us</h3>
-              <h3>+91 12345678978</h3>
+              <h3>+88 0171111111</h3>
             </div>
           </div>
 
@@ -152,6 +183,20 @@ const Wrapper = styled.section`
       height: 0.1px;
     }
   }
+
+  .adress{
+    margin-top: 4rem;
+    
+    display: flex;
+    align-items: center;
+    justift-contet: space-between;
+    gap: 1.2rem;
+
+    p{
+        color:black;
+    }
+  }
+
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
     .contact-short {
