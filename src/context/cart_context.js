@@ -12,12 +12,15 @@ const getLocalCartData = () => {
 
     const parsedData = JSON.parse(localCartData);
 
+
+    //solving the localstorage problem after firebase deployment by checking if parsedData is an Array or not
     if(!Array.isArray(parsedData)) return [];
 
     else{
         return parsedData ;
     }
 }
+
 
 const initialState = {
     cart: getLocalCartData(),
@@ -36,6 +39,13 @@ const CartProvider = ({ children }) => {
 
     }
 
+    const setDecrease = _id => {
+        dispatch({type: "SET_DECREMENT", payload: _id})
+    };
+    const setIncrease = _id => {
+        dispatch({type: "SET_INCREMENT", payload: _id})
+    };
+
     const removeItem = (_id) => {
         console.log("testing removing ID", _id);
         dispatch({ type: "REMOVE_ITEM", payload: _id });
@@ -47,6 +57,7 @@ const CartProvider = ({ children }) => {
     
 
     useEffect(() => {
+        dispatch({ type: "CART_TOTAL_ITEM" });
         localStorage.setItem("alhabibCart", JSON.stringify(state.cart));
     },[state.cart]);
 
@@ -54,7 +65,15 @@ const CartProvider = ({ children }) => {
 
     console.log("state: ", state);
 
-    return (<CartContext.Provider value={{ ...state, addToCart, removeItem, clearCart }}>
+    return (<CartContext.Provider value={{ 
+            ...state,
+            addToCart,
+            removeItem,
+            clearCart,
+            setDecrease,
+            setIncrease,
+        
+        }}>
 
         {children}
     </CartContext.Provider>

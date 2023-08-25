@@ -9,13 +9,13 @@ const Contact = () => {
   const cartData = JSON.parse(localCartData);
   console.log(cartData);
 
+  // if any customer wants to send message other than quotation message from add to cart
   let isQuote = true;
-
   if(cartData.length === 0) {
     isQuote = false;
   }
   
-  let productData = cartData.map((product) => `${product.name} ${product.amount} pcs`).join('\n');
+  let productData = cartData.map((product) => `${product.name}===> ${product.amount} pcs`).join('\n\n');
 
   console.log(productData);
   
@@ -32,7 +32,8 @@ const Contact = () => {
         style={{ border: "0" }}
         allowFullScreen=""
         loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade">
+        referrerPolicy="no-referrer-when-downgrade"
+        title='Map of Al Habib'>
 
       </iframe>
 
@@ -59,6 +60,7 @@ const Contact = () => {
               autoComplete="off"
               // required
             />
+
             <input
               type="tel"
               name="Phone"
@@ -68,18 +70,29 @@ const Contact = () => {
               title='Please give a valid Bangladeshi Phone Number'
               required
             />
-           
-            <textarea
+            
+            {isQuote
+                ?
+                <textarea
+                name="Message"
+                cols="30"
+                rows="10"
+                required
+                autoComplete="off"
+                placeholder={`Your Quote Message`}
+                value={`I want a quotation for the following items: \n\n${productData}`}
+                ></textarea>
+                :
+                <textarea
                 name="Message"
                 cols="30"
                 rows="10"
                 required
                 autoComplete="off"
                 placeholder={`Your Message`}
-                value={`I want a quotation for the following items: \n\n${productData}`}
-                ></textarea>
-            
-
+                
+                ></textarea>}
+           
             <input type="submit" value="send" />
           </form>
         </div>

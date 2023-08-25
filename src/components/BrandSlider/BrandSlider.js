@@ -26,7 +26,7 @@ const BrandSlider = () => {
         }]
       };
     return (
-      <div style={{border: "2px solid blue"}}>
+      <div>
       <Wrapper className="brand-section">
       <div className="container">
         <div style={{marginBottom: "5rem"}}> 
@@ -54,7 +54,7 @@ const BrandSlider = () => {
               alt="trusted-brands"
             />
           </div>
-          <div style={{border: "2px solid blue"}} className="slide">
+          <div className="slide">
             <img
               src="https://i.ibb.co/2dCn4kh/big-red-2.png"
               alt="trusted-brands"
