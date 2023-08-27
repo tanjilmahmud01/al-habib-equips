@@ -4,7 +4,7 @@ import reducer from "../reducer/productReducer/productReducer";
 
 const AppContext = createContext();
 
-const API = "https://alhabib-server.vercel.app/products";
+const API = "https://alhabib-server-tanjilmahmud01.vercel.app/products";
 
 const initialState = {
     isLoading: false,
@@ -18,8 +18,11 @@ const initialState = {
 const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    //api call for all featured products
+    useEffect(() => {
+        getProducts(API);
+    }, []);
 
+    //api call for all featured products
     const getProducts = async (url) => {
         dispatch({ type: "SET_LOADING" });
         try {
@@ -33,7 +36,6 @@ const AppProvider = ({ children }) => {
     };
 
     //api call for a single product
-
     const getSingleProduct = async (url) => {
         dispatch({ type: "SET_SINGLE_LOADING" });
         try {
@@ -51,9 +53,7 @@ const AppProvider = ({ children }) => {
 
 
 
-    useEffect(() => {
-        getProducts(API);
-    }, []);
+   
 
     return (
         <AppContext.Provider value={{ ...state, getSingleProduct }}>{children}</AppContext.Provider>

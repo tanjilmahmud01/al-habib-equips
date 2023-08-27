@@ -19,7 +19,7 @@ const SingleProduct = () => {
 
   // coming from Product, url parameter
   const { id } = useParams();
-  const API = `https://alhabib-server.vercel.app/products/${id}`;
+  const API = `https://alhabib-server-tanjilmahmud01.vercel.app/products/${id}`;
 
   useEffect(() => {
     getSingleProduct(`${API}`);

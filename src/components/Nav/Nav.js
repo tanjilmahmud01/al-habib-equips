@@ -23,7 +23,7 @@ const Nav = () => {
           font-size: 1.8rem;
           font-weight: 500;
           text-transform: uppercase;
-          color: ${({ theme }) => theme.colors.black};
+          color: #FFA82A;
           transition: color 0.3s linear;
         }
 
@@ -86,11 +86,11 @@ const Nav = () => {
       .mobile-navbar-btn {
         display: inline-block;
         z-index: 9999;
-        border: ${({ theme }) => theme.colors.black};
+        border: #FFA82A;
 
         .mobile-nav-icon {
           font-size: 4.2rem;
-          color: ${({ theme }) => theme.colors.black};
+          color: #FFA82A;
         }
       }
 
@@ -100,7 +100,7 @@ const Nav = () => {
         position: absolute;
         top: 30%;
         right: 10%;
-        color: ${({ theme }) => theme.colors.black};
+        color: #FFA82A;
         z-index: 9999;
       }
 
