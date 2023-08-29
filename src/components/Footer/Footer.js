@@ -34,28 +34,28 @@ const Footer = () => {
               <h3 style={{marginBottom:"2rem", marginTop:"2rem"}}>Al Habib</h3>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, placeat? Provident at dolore nesciunt qui?</p>
               <div className="adress">
-              <FaAddressCard style={{fontSize:"30px", color:"black"}} className="icons" />
+              <FaAddressCard style={{fontSize:"30px", color:"#12BED9"}} className="icons" />
               
               <p>65 Nawabpur Road, Dhaka</p>
               </div>
               <div className="adress">
-              <FaPhoneAlt style={{fontSize:"30px", color:"black"}} className="icons" />
+              <FaPhoneAlt style={{fontSize:"30px", color:"#12BED9"}} className="icons" />
               
               <p>017111111111</p>
               <p>017222222222</p>
               </div>
               <div className="adress">
-              <FaAddressCard style={{fontSize:"30px", color:"black"}} className="icons" />
+              <FaAddressCard style={{fontSize:"30px", color:"#12BED9"}} className="icons" />
               
               <p>65 Nawabpur Road, Dhaka</p>
               </div>
               <div className="adress">
-              <TbSend style={{fontSize:"30px", color:"black"}} className="icons" />
+              <TbSend style={{fontSize:"30px", color:"#12BED9"}} className="icons" />
               
               <p>alhabib@gmail.com</p>
               </div>
               <div className="adress">
-              <FaClock style={{fontSize:"30px", color:"black"}} className="icons" />
+              <FaClock style={{fontSize:"30px", color:"#12BED9"}} className="icons" />
               
               <p>9 AM to 5 PM</p>
               </div>
@@ -116,6 +116,8 @@ const Wrapper = styled.section`
     margin: 0;
   }
 
+  
+
   .contact-short {
     max-width: 60vw;
     margin: auto;
@@ -134,18 +136,18 @@ const Wrapper = styled.section`
   footer {
     padding: 14rem 0 9rem 0;
     background-color:  #3B0D45;
-    background-image: url("https://i.ibb.co/fq7HH1t/set-background-image-flutter-hero.webp");
+    background-image: url("https://i.ibb.co/KjnRstX/Whats-App-Image-2023-08-28-at-1-21-28-AM.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 
     h3 {
-      color: #000;
+      color: #FFF;
       margin-bottom: 2.4rem;
     }
     p {
-      color: #000;
+      color: #FFF;
     }
     .footer-social--icons {
       display: flex;
@@ -158,18 +160,18 @@ const Wrapper = styled.section`
         
 
         .icons {
-          color: #EE3A21;
+          color: #12BED9;
           font-size: 2.4rem;
           position: relative;
           cursor: pointer;
         }
         .icons:hover{
-            background-color: #EE3A21;
+            background-color: #12BED9;
             color: #FFFFFF
         }
       }
       div: hover{
-        background-color: #EE3A21;
+        background-color: #12BED9;
       }
     }
   }
@@ -193,7 +195,7 @@ const Wrapper = styled.section`
     gap: 1.2rem;
 
     p{
-        color:black;
+        color:#FFF;
     }
   }
 

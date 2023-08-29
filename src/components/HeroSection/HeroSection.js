@@ -18,7 +18,12 @@ const HeroSection = ({ myData }) => {
                         <p>Your trusted source of Garage Equipments. Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, vitae sapiente rem consequuntur incidunt accusamus rerum odio repellat corporis nihil?</p>
 
                         <NavLink>
-                            <Button>Explore Products</Button>
+                            <Button>
+
+                              <NavLink  to="/products">
+                              Explore Products
+                              </NavLink>
+                            </Button>
                         </NavLink>
 
                     </div>
