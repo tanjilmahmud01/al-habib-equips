@@ -54,7 +54,9 @@ const filterReducer = (state, action) => {
                 };
           
                 newSortData = tempSortProduct.sort(sortingProducts);
-          
+
+                //Here, Array.sort() function is a javascript function that may take a 'compare function' as parameter. Compare function returns a negative, zero or positive value. If negative, the first element (a number or a string) is placed before the second element (the other number or string). If positive, vice versa. If zero, equal. localeCompare also works in similar way.
+
                 return {
                   ...state,
                   filter_products: newSortData,

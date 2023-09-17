@@ -5,6 +5,9 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 
 const BannerSlider = () => {
+
+    // slick slider is used in this component. Link: https://react-slick.neostack.com/docs/get-started
+
     const settings = {
         dots: true,
         infinite: true,
@@ -34,6 +37,8 @@ const BannerSlider = () => {
         </div>
        
         <Slider {...settings}>
+
+          {/* add a new div with img for a new slide in the slider */}
       
           <div className="slide">
             <img

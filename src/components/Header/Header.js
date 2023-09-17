@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <MainHeader>
             <NavLink to='/'>
-                <div className='border border-success mt-5'>
+                <div className=''>
                     <img src={logo} alt="al habib logo" />
                 </div>
 

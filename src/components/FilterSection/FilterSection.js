@@ -13,10 +13,14 @@ const FilterSection = () => {
     const getUniqueData = (data, property) => {
       let newVal = data.map(curElem => curElem[property]);
       newVal = ["all", ... new Set(newVal)];
+
+      //Here, Set is a JavaScript function. we can pass an array with repeatative values in the new Set constructor to get only unique values
+      
       console.log("new values",newVal);
       return newVal;
     }
 
+    //category and company names will not be repeated, because multiple products can have the same category name, or company name. But we only need to show the company name/category name once in the filter list.
     const categoryOnlyData = getUniqueData(all_products, "category");
     const companyOnlyData = getUniqueData(all_products, "company");
     

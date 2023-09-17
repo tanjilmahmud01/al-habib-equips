@@ -3,6 +3,7 @@ import HeroSection from '../../../components/HeroSection/HeroSection';
 import FeaturedProducts from '../../../components/FeaturedProducts/FeaturedProducts';
 import BrandSlider from '../../../components/BrandSlider/BrandSlider';
 import BannerSlider from '../../../components/BannerSlider/BannerSlider';
+import YoutubeSection from '../../../components/YoutubeSection/YoutubeSection';
 
 const Home = () => {
 
@@ -19,7 +20,11 @@ const Home = () => {
 
             <FeaturedProducts />
 
+            
+
             <BrandSlider/>
+
+            <YoutubeSection/>
         </>
     );
 };

@@ -12,6 +12,7 @@ import SingleProduct from "./Pages/Shared/ProductDetails/SingleProduct";
 import Error from "./Pages/Shared/Error/Error";
 import Cart from "./Pages/Shared/Cart/Cart";
 import Footer from "./components/Footer/Footer";
+import Login from "./Pages/Login/Login";
 
 const App = () => {
 
@@ -53,8 +54,10 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
+          {/* here we have used useParams() in SingleProduct component, the params variable is called id, instead of _id here */}
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login/>} />
           <Route path="*" element={<Error />} />
 
         </Routes>

@@ -19,6 +19,8 @@ const FeaturedProducts = () => {
                 <div className="common-heading">Our Featured Products</div>
                 <div className="grid grid-three-column">
                     {featureProducts.map((curElem) => {
+                        // This is a card component
+                        
                         return <Product key={curElem._id} {...curElem} />;
                     })}
                 </div>

@@ -54,7 +54,7 @@ export const FilterContextProvider = ({children}) =>{
         return dispatch({ type: "UPDATE_FILTERS_VALUE", payload: { name, value } });
     };
 
-
+    // whenever products change, this useEffect will load the products in state
     useEffect(() => {
         dispatch({type: "LOAD_FILTER_PRODUCTS",payload: products});
         

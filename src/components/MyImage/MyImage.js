@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-// url set to empty string for undefined map error, setting default values in imgs array
+// url set to an empty string for undefined map error, setting default values in imgs array
+//imgs is an array where each image is an object with a default property named url with a default value of ""
+
 const MyImage = ({ imgs = [{ url: "" }] }) => {
     const [mainImage, setMainImage] = useState(imgs[0]);
 
@@ -22,7 +24,7 @@ const MyImage = ({ imgs = [{ url: "" }] }) => {
                     );
                 })}
             </div>
-            {/* 2nd column  */}
+            {/* 2nd column => the image which is clicked from the 4 images */}
 
             <div className="main-screen">
                 <img src={mainImage.url} alt={mainImage.filename} />

@@ -18,6 +18,7 @@ const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } = useProductContext();
 
   // coming from Product, url parameter
+  // in the app.js route definition, singleproduct/:id was written which is accessed here by id useParams(), not _id
   const { id } = useParams();
   const API = `https://alhabib-server-tanjilmahmud01.vercel.app/products/${id}`;
 
@@ -45,8 +46,8 @@ const SingleProduct = () => {
   if (isSingleLoading) {
     return <div className="page_loading">Loading.....</div>;
   }
-
-  // array of technical specifications data
+  
+  // array of technical specifications data, it is a list of bulletpoint items 
   const technical_list = description?.technical_specifications;
   const list_itmes = technical_list?.map((listItem, index) =>
     <li style={{ listStyle: "square", marginBottom: "5px", marginLeft: "50px" }} key={index}>{listItem}</li>
@@ -55,15 +56,17 @@ const SingleProduct = () => {
   return <Wrapper>
     <PageNavigation title={name} />
     <Container className="container">
-      <div className="grid grid-two-column">
-        {/* product Images  */}
+        <div className="grid grid-two-column">
+
+        {/* product side Images => 4 images in an array sent to MyImage component*/}
         <div className="product_images">
           <MyImage imgs={image} />
         </div>
 
         {/* product dAta  */}
         <div className="product-data">
-          <h2>{name}</h2>
+        <h2>{name}</h2>
+
           {/* <p>{stars}</p> */}
           {/* <p>{reviews} reviews</p> */}
           {/* <p className="product-data-price">
@@ -75,12 +78,12 @@ const SingleProduct = () => {
           {/* <p className="product-data-price product-data-real-price">
             Deal of the Day: <FormatPrice price={price} />
           </p> */}
+
           <h3 style={{ color: "#900C3F" }}> <u>Technical Specifications:</u>
           </h3>
+
           <ul>
-
             <p>{list_itmes}</p>
-
           </ul>
 
           <h3> <u style={{ color: "#900C3F" }}>Product Description:</u>  </h3>
@@ -91,6 +94,8 @@ const SingleProduct = () => {
 
           <p> <strong>Weight: </strong>{description?.weight}</p>
 
+
+          {/* speciality and services icons, can be changed to other icons according to the need */}
           <div className="product-data-warranty">
             <div className="product-warranty-data">
               <TbTruckDelivery className="warranty-icon" />
@@ -113,19 +118,25 @@ const SingleProduct = () => {
             </div>
           </div>
 
+
+          {/* product stock checking */}
           <div className="product-data-info">
             <p>
-              Available:
+            Availability:
               <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
             </p>
             <p>
               Product ID: <span> {alias} </span>
             </p>
+
+
             {/* <p>
               Brand :<span> {company} </span>
             </p> */}
 
             <hr />
+
+            {/* if stock is available, add the product in cart */}
             {stock > 0 && <AddToCart product={singleProduct} />}
 
           </div>

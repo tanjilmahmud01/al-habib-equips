@@ -34,28 +34,28 @@ const Footer = () => {
               <h3 style={{marginBottom:"2rem", marginTop:"2rem"}}>Al Habib</h3>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, placeat? Provident at dolore nesciunt qui?</p>
               <div className="adress">
-              <FaAddressCard style={{fontSize:"30px", color:"#12BED9"}} className="icons" />
+              <FaAddressCard style={{fontSize:"30px", color:"rgb(98, 84, 243)"}} className="icons" />
               
               <p>65 Nawabpur Road, Dhaka</p>
               </div>
               <div className="adress">
-              <FaPhoneAlt style={{fontSize:"30px", color:"#12BED9"}} className="icons" />
+              <FaPhoneAlt style={{fontSize:"30px", color:"rgb(98, 84, 243)"}} className="icons" />
               
               <p>017111111111</p>
               <p>017222222222</p>
               </div>
               <div className="adress">
-              <FaAddressCard style={{fontSize:"30px", color:"#12BED9"}} className="icons" />
+              <FaAddressCard style={{fontSize:"30px", color:"rgb(98, 84, 243)"}} className="icons" />
               
               <p>65 Nawabpur Road, Dhaka</p>
               </div>
               <div className="adress">
-              <TbSend style={{fontSize:"30px", color:"#12BED9"}} className="icons" />
+              <TbSend style={{fontSize:"30px", color:"rgb(98, 84, 243)"}} className="icons" />
               
               <p>alhabib@gmail.com</p>
               </div>
               <div className="adress">
-              <FaClock style={{fontSize:"30px", color:"#12BED9"}} className="icons" />
+              <FaClock style={{fontSize:"30px", color:"rgb(98, 84, 243)"}} className="icons" />
               
               <p>9 AM to 5 PM</p>
               </div>
@@ -160,18 +160,18 @@ const Wrapper = styled.section`
         
 
         .icons {
-          color: #12BED9;
+          color: rgb(98, 84, 243);;
           font-size: 2.4rem;
           position: relative;
           cursor: pointer;
         }
         .icons:hover{
-            background-color: #12BED9;
+            background-color: rgb(98, 84, 243);;
             color: #FFFFFF
         }
       }
       div: hover{
-        background-color: #12BED9;
+        background-color: rgb(98, 84, 243);;
       }
     }
   }

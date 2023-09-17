@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 
 
 const Product = (curElem) => {
+
+    // This is the Product Card component
+
     const { _id, name, image_url, price, category } = curElem;
     // console.log(name);
 
