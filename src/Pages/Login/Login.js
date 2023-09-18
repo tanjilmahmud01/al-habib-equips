@@ -12,21 +12,25 @@ import './Login.module.css';
 
 const Login = () => {
 
-    const FacebookBackground = "linear-gradient(to right, #0546A0 0%, #663FB6 100%)"
+    const FacebookBackground = "linear-gradient(to right, #0546A0 0%, #663FB6 100%)";
+
+    
 
     return (
         <div style={{margin:"0 auto",background:"linear-gradient(163deg, rgba(233,224,238,1) 15%, rgba(175,204,223,1) 44%, rgba(103,210,223,1) 51%, rgba(6,217,222,1) 72%)"}}>
-        <div style={{display:"flex", alignItems:"center"}}>
+        <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+        <form>
         <MainContainer style={{margin:"5rem auto"}}>
         <WelcomeText>Welcome</WelcomeText>
 
+
         <InputContainer>
-        <Input type="text" placeholder="Email" />
+        <Input type="email" placeholder="Email" />
         <Input type="password" placeholder="Password" />
         </InputContainer>
-
+        
         <ButtonContainer>
-        <Button content="WW" />
+        <Button type="submit" value="Tanjil" />
         </ButtonContainer>
 
         <LoginWith>OR LOGIN WITH</LoginWith>
@@ -50,6 +54,8 @@ const Login = () => {
 
         <ForgotPassword>Forgot Password ?</ForgotPassword>
         </MainContainer>
+        </form>
+        
         </div>
        
 
