@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = ({ type, value }) => {
+const Button = ({type, value }) => {
     return (
         <StyledButton type={type} value={value}>
          

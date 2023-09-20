@@ -201,10 +201,10 @@ const Nav = () => {
                     </li>
                     <li>
                         <NavLink
-                            to="/login"
+                            to="/dashboard"
                             className="navbar-link "
                             onClick={() => setMenuIcon(false)}>
-                            Login
+                            Dashboard
                         </NavLink>
                     </li>
                     <li>

@@ -1,6 +1,6 @@
 
 
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
@@ -8,29 +8,69 @@ import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import Icon from '../../components/Icon/Icon';
 import { Container } from '../../styles/Container';
 import './Login.module.css';
+import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
+import { login_context } from '../../context/login_context';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
 
+    const{user, setUser, loading, setLoading} = useContext(login_context);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
+
+    console.log('coming from Login route. User:', user, "Loading: ", loading);
+
     const FacebookBackground = "linear-gradient(to right, #0546A0 0%, #663FB6 100%)";
 
+    const adminName = process.env.REACT_APP_admin;
+    const adminPassword = process.env.REACT_APP_admin_password;
+    
+
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        const user = {email, password};
+        
+        fetch('http://localhost:5000/login', {
+          method:'POST',
+          headers: {
+            'content-type' : 'application/json'
+          },
+          body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+          setUser(data);
+          setLoading(false);
+          navigate(from, {replace: true});
+        })
+        .catch(err => console.log(err));
+
+
+    }
     
 
     return (
         <div style={{margin:"0 auto",background:"linear-gradient(163deg, rgba(233,224,238,1) 15%, rgba(175,204,223,1) 44%, rgba(103,210,223,1) 51%, rgba(6,217,222,1) 72%)"}}>
         <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
-        <form>
+        <form onSubmit={handleLogin}>
         <MainContainer style={{margin:"5rem auto"}}>
         <WelcomeText>Welcome</WelcomeText>
 
 
         <InputContainer>
-        <Input type="email" placeholder="Email" />
-        <Input type="password" placeholder="Password" />
+        <Input name='email' type="text" placeholder="Email" />
+        <Input name='password' type="password" placeholder="Password" />
         </InputContainer>
         
         <ButtonContainer>
-        <Button type="submit" value="Tanjil" />
+        <Button type="submit" value="LOGIN" />
         </ButtonContainer>
 
         <LoginWith>OR LOGIN WITH</LoginWith>
