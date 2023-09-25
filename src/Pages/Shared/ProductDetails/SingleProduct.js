@@ -20,7 +20,7 @@ const SingleProduct = () => {
   // coming from Product, url parameter
   // in the app.js route definition, singleproduct/:id was written which is accessed here by id useParams(), not _id
   const { id } = useParams();
-  const API = `https://alhabib-server-tanjilmahmud01.vercel.app/products/${id}`;
+  const API = `https://alhabib-server.vercel.app/singleproduct/${id}`;
 
   useEffect(() => {
     getSingleProduct(`${API}`);

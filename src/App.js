@@ -15,6 +15,7 @@ import Footer from "./components/Footer/Footer";
 import Login from "./Pages/Login/Login";
 import AdminDashboard from "./Pages/AdminDashboard/AdminDashboard";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import AddNewCategory from "./Pages/AddNewCategory/AddNewCategory";
 
 const App = () => {
 
@@ -63,6 +64,7 @@ const App = () => {
           <PrivateRoute>  <AdminDashboard/></PrivateRoute>
         } />
           <Route path="/login" element={<Login/>} />
+          <Route path="/addNewCategory" element={<PrivateRoute>  <AddNewCategory/></PrivateRoute>} />
           <Route path="*" element={<Error />} />
 
         </Routes>

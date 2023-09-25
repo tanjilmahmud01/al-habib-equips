@@ -66,7 +66,7 @@ const Contact = () => {
               name="Phone"
               placeholder="Your Mobile Number"
               autoComplete="off"
-              pattern="[0-9]{11}"
+              pattern="^01[0-9]{9}"
               title='Please give a valid Bangladeshi Phone Number'
               required
             />

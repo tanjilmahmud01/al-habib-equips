@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Button } from "../../styles/Button";
-import { FaDiscord, FaInstagram, FaYoutube, FaAddressCard, FaPhoneAlt, FaClock } from "react-icons/fa";
+import { FaDiscord, FaInstagram, FaYoutube, FaAddressCard, FaPhoneAlt, FaClock, FaWhatsapp, FaFacebookMessenger } from "react-icons/fa";
 import { TbSend } from "react-icons/tb";
 import logo from '../../images/al-habib-logo.png';
 
@@ -11,6 +11,7 @@ const Footer = () => {
     <>
       <Wrapper>
         <section className="contact-short">
+          <div style={{position:'relative'}}>
           <div className="grid grid-two-column">
             <div>
               <h3 style={{color:"white"}}>Ready to get started?</h3>
@@ -19,10 +20,12 @@ const Footer = () => {
 
             <div>
               <Button className="btn hireme-btn">
-                <NavLink to="/"> Get Started </NavLink>
+                <NavLink to="/products"> Get Started </NavLink>
               </Button>
             </div>
           </div>
+          </div>
+     
         </section>
         {/* footer section */}
 
@@ -31,30 +34,30 @@ const Footer = () => {
             <div className="footer-about">
             <h3>About</h3>
             <img src={logo} alt="al habib logo" />
-              <h3 style={{marginBottom:"2rem", marginTop:"2rem"}}>Al Habib</h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, placeat? Provident at dolore nesciunt qui?</p>
-              <div className="adress">
+              <h2 style={{marginBottom:"2rem", marginTop:"2rem", color:'white', fontWeight:'bolder'}}>AL-HABIB</h2>
+              <p>Al Habib is one of the leading suppliers, wholesaler, retailer and after sales service provider of Industrial Equipments in Bangladesh.</p>
+              <div className="footer-icon">
               <FaAddressCard style={{fontSize:"30px", color:"rgb(98, 84, 243)"}} className="icons" />
               
               <p>65 Nawabpur Road, Dhaka</p>
               </div>
-              <div className="adress">
+              <div className="footer-icon">
               <FaPhoneAlt style={{fontSize:"30px", color:"rgb(98, 84, 243)"}} className="icons" />
               
-              <p>017111111111</p>
-              <p>017222222222</p>
+              <p>+8801886795120</p>
+              {/* <p>017222222222</p> */}
               </div>
-              <div className="adress">
+              {/* <div className="adress">
               <FaAddressCard style={{fontSize:"30px", color:"rgb(98, 84, 243)"}} className="icons" />
               
               <p>65 Nawabpur Road, Dhaka</p>
-              </div>
-              <div className="adress">
+              </div> */}
+              <div className="footer-icon">
               <TbSend style={{fontSize:"30px", color:"rgb(98, 84, 243)"}} className="icons" />
               
-              <p>alhabib@gmail.com</p>
+              <p>alhabib.equipments@gmail.com</p>
               </div>
-              <div className="adress">
+              <div className="footer-icon">
               <FaClock style={{fontSize:"30px", color:"rgb(98, 84, 243)"}} className="icons" />
               
               <p>9 AM to 5 PM</p>
@@ -70,26 +73,30 @@ const Footer = () => {
               </form>
             </div>
             <div className="footer-social">
-              <h3>Follow Us</h3>
+              <h3>Connect With Us On</h3>
               <div className="footer-social--icons">
                 <div className="icons-hover">
-                  <FaDiscord className="icons" />
+                <a
+                    href="http://m.me/alhabibequips"
+                    >
+                    <FaFacebookMessenger className="icons" />
+                  </a>
                 </div>
-                <div>
+                {/* <div>
                   <FaInstagram className="icons" />
-                </div>
+                </div> */}
                 <div>
                   <a
-                    href="https://www.youtube.com"
+                    href="http://wa.me/+8801886795120"
                     >
-                    <FaYoutube className="icons" />
+                    <FaWhatsapp className="icons" />
                   </a>
                 </div>
               </div>
             </div>
             <div className="footer-contact">
               <h3>Call Us</h3>
-              <h3>+88 0171111111</h3>
+              <h3>+8801886795120</h3>
             </div>
           </div>
 
@@ -97,9 +104,9 @@ const Footer = () => {
             <hr />
             <div className="container grid grid-two-column ">
               <p>
-                @{new Date().getFullYear()} Quanta Bangladesh. All Rights Reserved
+               &copy; {new Date().getFullYear()} Quanta Bangladesh. All Rights Reserved
               </p>
-              <div>
+              <div style={{display:"flex", gap:'5rem'}}>
                 <p>PRIVACY POLICY</p>
                 <p>TERMS & CONDITIONS</p>
               </div>
@@ -119,6 +126,7 @@ const Wrapper = styled.section`
   
 
   .contact-short {
+    
     max-width: 60vw;
     margin: auto;
     padding: 5rem 10rem;
@@ -137,8 +145,8 @@ const Wrapper = styled.section`
     padding: 14rem 0 9rem 0;
     background-color:  #3B0D45;
     background-image: url("https://i.ibb.co/KjnRstX/Whats-App-Image-2023-08-28-at-1-21-28-AM.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 
@@ -157,10 +165,11 @@ const Wrapper = styled.section`
         padding: 1rem;
         border-radius: 50%;
         border: 2px solid ${({ theme }) => theme.colors.white};
-        
+        background-color: black;
 
         .icons {
-          color: rgb(98, 84, 243);;
+          color: white;
+          
           font-size: 2.4rem;
           position: relative;
           cursor: pointer;
@@ -186,7 +195,7 @@ const Wrapper = styled.section`
     }
   }
 
-  .adress{
+  .footer-icon{
     margin-top: 4rem;
     
     display: flex;
@@ -195,7 +204,7 @@ const Wrapper = styled.section`
     gap: 1.2rem;
 
     p{
-        color:#FFF;
+      color:#FFF;
     }
   }
 

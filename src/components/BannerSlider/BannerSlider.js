@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import styled from 'styled-components';
+import image from '../../images/BannerSlider1.jpeg';
 
 const BannerSlider = () => {
 
@@ -31,10 +32,8 @@ const BannerSlider = () => {
     return (
       <div>
       <Wrapper className="brand-section">
-      <div className="container">
-        <div style={{marginBottom: "5rem"}}> 
+      <div className="">
        
-        </div>
        
         <Slider {...settings}>
 
@@ -53,6 +52,12 @@ const BannerSlider = () => {
               alt="Al habib Banner"
             />
           </div>
+          {/* <div className="slide">
+            <img
+              src={image}
+              alt="Al habib Banner"
+            />
+          </div> */}
           <div className="slide">
             <img
               src="https://i.ibb.co/Gk83S8Z/carousel-3.jpg"

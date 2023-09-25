@@ -54,7 +54,7 @@ export const FilterContextProvider = ({children}) =>{
         return dispatch({ type: "UPDATE_FILTERS_VALUE", payload: { name, value } });
     };
 
-    // whenever products change, this useEffect will load the products in state
+    // Category and Company's default value is 'all', so in the state, all_products and filter_products both will be filled up with all the products in the database. whenever products change, this useEffect will load the products in state
     useEffect(() => {
         dispatch({type: "LOAD_FILTER_PRODUCTS",payload: products});
         

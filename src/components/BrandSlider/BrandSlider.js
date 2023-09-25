@@ -3,6 +3,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import styled from 'styled-components';
+import photo1 from '../../images/brand-1.jpeg';
+import photo2 from '../../images/brand-2.jpeg';
+import photo3 from '../../images/brand-3.jpeg';
+import photo4 from '../../images/brand-4.jpeg';
+import photo5 from '../../images/brand-5.jpeg';
+import photo6 from '../../images/brand-6.jpeg';
+import photo7 from '../../images/brand-7.jpeg';
+import photo8 from '../../images/brand-8.jpeg';
+import photo9 from '../../images/brand-9.jpeg';
+import photo10 from '../../images/brand-10.jpeg';
+import photo11 from '../../images/brand-11.jpeg';
+import photo12 from '../../images/brand-12.jpeg';
+import photo13 from '../../images/brand-13.jpeg';
+import photo14 from '../../images/brand-14.jpeg';
+import photo15 from '../../images/brand-15.jpeg';
+import photo16 from '../../images/brand-16.jpeg';
+import photo17 from '../../images/brand-17.jpeg';
+
+
 
 const BrandSlider = () => {
     const settings = {
@@ -29,16 +48,17 @@ const BrandSlider = () => {
       <div>
       <Wrapper className="brand-section">
       <div className="container">
-        <div style={{marginBottom: "5rem"}}> 
+        <div> 
         <h3>Brands Working With Al Habib</h3>
         </div>
        
         <Slider {...settings}>
         {/* <div className="brand-section-slider"> */}
-          {/* my 1st img  */}
+          {/* use imgbb direct links in the slide's img source  */}
           <div className="slide">
             <img
-              src="https://i.ibb.co/vXXmxFd/Bosch-Logo-2018-present.jpg"
+              style={{height:'100%', width:'100%'}}
+              src={photo1}
               alt="trusted-brands"
             />
           </div>
@@ -50,60 +70,69 @@ const BrandSlider = () => {
           </div> */}
           <div className="slide">
             <img
-              src="https://i.ibb.co/HFGm1V3/dewalt-3.png"
+              style={{height:'100%', width:'100%'}}
+              src={photo2}
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://i.ibb.co/2dCn4kh/big-red-2.png"
+              style={{height:'100%', width:'100%'}}
+                src={photo3}
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://i.ibb.co/QK0X1Kg/road-buck.png"
+              style={{height:'100%', width:'100%'}}
+                src={photo4}
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://i.ibb.co/m5krFj8/autel.png"
+              style={{height:'100%', width:'100%'}}
+                src={photo5}
               alt="trusted-brands"
             />
           </div>
           
           <div className="slide">
             <img
-              src="https://i.ibb.co/8zKx3ty/ken.png"
+              style={{height:'100%', width:'100%'}}
+                src={photo6}
               alt="trusted-brands"
             />
           </div>
           
           <div className="slide">
             <img
-              src="https://i.ibb.co/vXXmxFd/Bosch-Logo-2018-present.jpg"
+              style={{height:'100%', width:'100%'}}
+              src={photo7}
               alt="trusted-brands"
             />
           </div>
        
           <div className="slide">
             <img
-              src="https://i.ibb.co/mSJ24MF/dong-cheng.webp"
+              style={{height:'100%', width:'100%'}}
+              src={photo8}
               alt="trusted-brands"
             />
           </div>
        
           <div className="slide">
             <img
-              src="https://i.ibb.co/zh9ybHN/Launch-Europe-Logo-Icon.png"
+              style={{height:'100%', width:'100%'}}
+                src={photo9}
               alt="trusted-brands"
             />
           </div>
        
           <div className="slide">
             <img
-              src="https://i.ibb.co/M2mMLB8/niuli.jpg"
+              style={{height:'100%', width:'100%'}}
+                src={photo10}
               alt="trusted-brands"
             />
           </div>
@@ -116,42 +145,56 @@ const BrandSlider = () => {
           </div> */}
           <div className="slide">
             <img
-              src="https://i.ibb.co/4TRf4WB/ingco-2.png"
+              style={{height:'100%', width:'100%'}}
+              src={photo11}
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://i.ibb.co/ZghF0f8/noblift.png"
+              style={{height:'100%', width:'100%'}}
+              src={photo12}
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://i.ibb.co/rswWhC2/yato.png"
+              style={{height:'100%', width:'100%'}}
+              src={photo13}
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://i.ibb.co/r4dW8bF/toptul.png"
+              style={{height:'100%', width:'100%'}}
+              src={photo14}
               alt="trusted-brands"
             />
           </div>
          
           <div className="slide">
             <img
-              src="https://i.ibb.co/qdMSVv5/total-tools.jpg"
+              style={{height:'100%', width:'100%'}}
+              src={photo15}
               alt="trusted-brands"
             />
           </div>
 
           <div className="slide">
             <img
-              src="https://i.ibb.co/svKsFSJ/autool-yellow.png"
+              style={{height:'100%', width:'100%'}}
+              src={photo16}
               alt="trusted-brands"
             />
           </div>
+          <div className="slide">
+            <img
+              style={{height:'100%', width:'100%'}}
+              src={photo17}
+              alt="trusted-brands"
+            />
+          </div>
+        
         {/* </div> */}
         </Slider>
       </div>

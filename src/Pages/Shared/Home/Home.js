@@ -8,7 +8,7 @@ import YoutubeSection from '../../../components/YoutubeSection/YoutubeSection';
 const Home = () => {
 
     const data = {
-        name: 'Al Habib Equipments'
+        name: 'AL-HABIB'
     }
 
     return (
